@@ -13,6 +13,7 @@ function Sidedrawer(props) {
     // console.log("Sidedrawer UseEffect");
     // console.log(props.activeEvent);
     currentUser().then((user) => {
+      if (user === null) return;
       handleGetEventsForUser(user.attributes.username).then((arr) => {
         setEventNames(arr);
       });
